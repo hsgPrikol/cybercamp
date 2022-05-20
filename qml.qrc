@@ -1,5 +1,26 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Registration.qml</file>
+        <file>pictureRegistration/backgroundLabel.png</file>
+        <file>pictureRegistration/backgroundTextField.png</file>
+        <file>Autorization.qml</file>
+        <file>pictureRegistration/pole_vvoda.png</file>
+        <file>pictureRegistration/vxod.tif</file>
+        <file>pictureRegistration/zaregistrirovatsya.tif</file>
+        <file>pictureRegistration/anime_anime_girls_Touhou_Kochiya_Sanae-71537.jpg</file>
+        <file>Burgermenu.qml</file>
+        <file>Helpmenu.qml</file>
+        <file>Menuelement.qml</file>
+        <file>Planner.qml</file>
+        <file>Raspisanie/burger.tif</file>
+        <file>Raspisanie/Comment.tif</file>
+        <file>Raspisanie/den`.tif</file>
+        <file>Raspisanie/palochka.tif</file>
+        <file>Raspisanie/sobutie.tif</file>
+        <file>Raspisanie/verh.tif</file>
+        <file>Raspisanie/znak_comments.tif</file>
+        <file>Plannermonth.qml</file>
+        <file>TaskChildren.qml</file>
     </qresource>
 </RCC>
