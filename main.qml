@@ -24,7 +24,7 @@ ApplicationWindow {
     Loader{
         id: loaderCamp
 
-        sourceComponent: autorizationComponent
+        sourceComponent: mapComponent
     }
 
     Component{
@@ -59,6 +59,22 @@ ApplicationWindow {
         }
     }
 
+
+    Component{
+        id: dialogsComponent
+
+        DialogsList{
+
+        }
+    }
+
+    Component{
+        id: mapComponent
+
+        Map{
+
+        }
+    }
 
     Burgermenu{
         id: burgermenu

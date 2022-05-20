@@ -25,5 +25,8 @@
         <file>FriendList.qml</file>
         <file>FriendsChar.qml</file>
         <file>FriendsProfile.qml</file>
+        <file>Dialogs.qml</file>
+        <file>DialogsList.qml</file>
+        <file>Map.qml</file>
     </qresource>
 </RCC>
