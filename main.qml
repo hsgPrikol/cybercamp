@@ -51,6 +51,15 @@ ApplicationWindow {
         }
     }
 
+    Component{
+        id: friendsComponent
+
+        FriendList{
+
+        }
+    }
+
+
     Burgermenu{
         id: burgermenu
         x: -tmpWidth

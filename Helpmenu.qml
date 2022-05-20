@@ -26,20 +26,20 @@ Rectangle{
 
     function unLoginAccount()
     {
-        close()
+//        close()
         console.log("unLoginAccount")
     }
 
     function helping()
     {
-        loader.sourceComponent = supportingComponent
+//        loader.sourceComponent = supportingComponent
         closeNavDrawer()
         console.log("helping")
     }
 
     function aboutDeveloper()
     {
-        loader.sourceComponent = aboutauthorsComponent
+//        loader.sourceComponent = aboutauthorsComponent
         closeNavDrawer()
         console.log("aboutDeveloper")
     }
@@ -51,7 +51,7 @@ Rectangle{
     property int dfltWidthElementMenu: 337
     property var colorBlue: "#158BCD"
     property var textHelpArray: ["Выход", "Поддержка", "О разработчике"]
-    property var colorHelpArray: ["#FA7E61", "#ffffff"]
+    property var colorHelpArray: ["#464f56", "#ffffff"]
     property int sizeFont: 20
 
     width: dfltWidthElementMenu

@@ -228,7 +228,7 @@ Rectangle {
                 id: repMenu
                 anchors.fill: parent
 
-                model: 6
+                model: 8
 
                 property int sizeHeightMenuElement: 60
                 Menuelement {
@@ -238,14 +238,14 @@ Rectangle {
             }
         }
 
-        Rectangle {
-            id: lineCuka1
-            x: 35
-            y: 477
-            width: 267
-            height: 1
-            color: "#ffffff"
-        }
+//        Rectangle {
+//            id: lineCuka1
+//            x: 35
+//            y: 588
+//            width: 267
+//            height: 1
+//            color: "#ffffff"
+//        }
 
         Rectangle {
             id: lineCuka2
@@ -306,8 +306,4 @@ Rectangle {
 
 
 
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:2}
-}
-##^##*/
+

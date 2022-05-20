@@ -22,5 +22,8 @@
         <file>Raspisanie/znak_comments.tif</file>
         <file>Plannermonth.qml</file>
         <file>TaskChildren.qml</file>
+        <file>FriendList.qml</file>
+        <file>FriendsChar.qml</file>
+        <file>FriendsProfile.qml</file>
     </qresource>
 </RCC>

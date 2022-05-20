@@ -3,8 +3,8 @@ import QtQuick.Controls 2.15
 
 Rectangle {
     id: autorization
-//    width: app_width
-//    height: app_height
+    //    width: app_width
+    //    height: app_height
 
     property int tmpWidth: 506
     property int tmpHeight: 900
@@ -20,17 +20,15 @@ Rectangle {
     function onAutorization(flag)
     {
         if (flag){
-//            loaderCamp.sourceComponent
+            //            loaderCamp.sourceComponent
             client.sendGetAchivementsUser()
             client.sendGetAllDataFromGlossary()
             client.sendGetPlantsUser()
-
-
-
-
         }
         else
+        {
             console.log("Error autorization")
+        }
     }
 
     Rectangle {
@@ -78,7 +76,7 @@ Rectangle {
                 id: image
                 width: 164
                 height: 51
-//                opacity: customOpacity
+                //                opacity: customOpacity
                 source: "qrc:/pictureRegistration/backgroundLabel.png"
             }
 
@@ -132,7 +130,7 @@ Rectangle {
                 id: image1
                 width: 164
                 height: 51
-//                opacity: customOpacity
+                //                opacity: customOpacity
                 source: "qrc:/pictureRegistration/backgroundLabel.png"
             }
 
@@ -252,13 +250,13 @@ Rectangle {
             onClicked: {
 
                 loaderCamp.sourceComponent = plannerComponent;
-//                client.sendAuthorization(login.text, password.text)
+                //                client.sendAuthorization(login.text, password.text)
             }
         }
     }
 
     Component.onCompleted: {
-//        client.onAnswerAuthorization.connect(onAutorization);
+        //        client.onAnswerAuthorization.connect(onAutorization);
     }
 }
 
