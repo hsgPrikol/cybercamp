@@ -107,7 +107,7 @@ Rectangle {
             y: 0
             width: app_width
             height: 60
-            color: "#3fae51"
+            color: colorBlue
 
             Rectangle {
                 id: rectangle1
@@ -123,7 +123,7 @@ Rectangle {
                     y: 14
                     width: 38
                     height: 32
-                    source: "qrc:/picture/arrow.tif"
+                    source: "qrc:/Dialog/vyhod.tif"
                     fillMode: Image.PreserveAspectFit
 
 
@@ -131,7 +131,7 @@ Rectangle {
                         anchors.fill: parent
 
                         onClicked: {
-                            loader.sourceComponent = plannerComponent
+                            loaderCamp.sourceComponent = plannerComponent;
                         }
                     }
                 }
@@ -173,7 +173,7 @@ Rectangle {
                     y: 8
                     width: 65
                     height: 44
-                    source: "qrc:/picture/luppa.tif"
+                    source: "qrc:/Messenger/poisk.tif"
                     fillMode: Image.PreserveAspectFit
                 }
                 MouseArea{

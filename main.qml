@@ -27,6 +27,14 @@ ApplicationWindow {
     }
 
     Component{
+        id: usercharComponent
+
+        Userchat{
+
+        }
+    }
+
+    Component{
         id: settingsComponent
 
         SettingsProfile{

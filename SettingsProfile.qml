@@ -74,7 +74,7 @@ Rectangle{
                 y: 5
                 width: 50
                 height: 50
-                source: "qrc:/picture/arrow.tif"
+                source: "qrc:/Dialog/vyhod.tif"
 
                 fillMode: Image.PreserveAspectFit
             }
@@ -83,7 +83,7 @@ Rectangle{
                 anchors.fill: parent
 
                 onClicked: {
-                    loader.sourceComponent = plannerComponent
+                    loaderCamp.sourceComponent = plannerComponent
                 }
             }
         }

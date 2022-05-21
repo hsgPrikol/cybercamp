@@ -96,7 +96,7 @@ Rectangle {
         Image {
             id: mainPhone
             anchors.fill: parent
-            source: "qrc:/picture/phone.tif"
+            source: ""
             opacity: 0.7
         }
 
@@ -151,7 +151,7 @@ Rectangle {
             y: 0
             width: 506
             height: 60
-            color: "#068d9d"
+            color: colorBlue
 
             Rectangle {
                 id: rectangle1
@@ -167,7 +167,7 @@ Rectangle {
                     y: 0
                     width: 40
                     height: 60
-                    source: "qrc:/resourses/resourses v4/ri_tochki.tif"
+                    source: "qrc:/Raspisanie/burger.tif"
                     fillMode: Image.PreserveAspectFit
 
 
@@ -176,7 +176,7 @@ Rectangle {
                     anchors.fill: parent
 
                     onClicked: {
-                        navDrawer.showNavDrawer()
+                        burgermenu.showNavDrawer()
                         console.log("navDrawer.showNavDrawer()")
                     }
                 }
@@ -218,7 +218,7 @@ Rectangle {
                     y: 8
                     width: 65
                     height: 44
-                    source: "qrc:/picture/luppa.tif"
+                    source: "qrc:/Messenger/poisk.tif"
                     fillMode: Image.PreserveAspectFit
                 }
             }

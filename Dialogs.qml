@@ -192,7 +192,7 @@ Rectangle {
             y: 17
             width: 44
             height: 44
-            color: "#068d9d"
+            color: colorBlue
             radius: 7
             visible: !isChecked
 
@@ -215,7 +215,7 @@ Rectangle {
             y: 69
             width: 12
             height: 12
-            color: "#068d9d"
+            color: colorBlue
             radius: 6
             visible: isOnline
         }

@@ -10,7 +10,7 @@ Rectangle{
     function shedule()
     {
 
-        loaderCamp.sourceComponent = friendsComponent;
+        loaderCamp.sourceComponent = plannerComponent;
 
         burgermenu.closeNavDrawer();
         console.log("shedule")
@@ -20,7 +20,7 @@ Rectangle{
     {
 //        dateLeft.setIsFromGoto(false)
 //        loaderCamp.
-//        loader.sourceComponent = plantsListComponent
+        loaderCamp.sourceComponent = dialogsComponent;
         burgermenu.closeNavDrawer();
         console.log("messandger")
     }
@@ -67,6 +67,7 @@ Rectangle{
 
     function friends()
     {
+        loaderCamp.sourceComponent = friendsComponent;
         burgermenu.closeNavDrawer();
         console.log("friends")
     }
