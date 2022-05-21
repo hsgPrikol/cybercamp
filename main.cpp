@@ -1,5 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "geopoint.h"
+#include "geoclass.h"
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +14,14 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
+
+
+        GeoPoint* gp=new GeoPoint();
+    engine.rootContext()->setContextProperty("gp", gp);
+
+    GeoClass* ss=new GeoClass();
+    engine.rootContext()->setContextProperty("geodd", ss);
+
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
         if (!obj && url == objUrl)
