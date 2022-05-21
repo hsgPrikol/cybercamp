@@ -21,9 +21,10 @@ Rectangle {
     {
         if (flag){
             //            loaderCamp.sourceComponent
-            client.sendGetAchivementsUser()
-            client.sendGetAllDataFromGlossary()
-            client.sendGetPlantsUser()
+            loaderCamp.sourceComponent = plannerComponent;
+            //client.sendGetAchivementsUser()
+            //client.sendGetAllDataFromGlossary()
+            //client.sendGetPlantsUser()
         }
         else
         {
@@ -249,7 +250,7 @@ Rectangle {
             //hoverEnabled: true
             onClicked: {
 
-                loaderCamp.sourceComponent = plannerComponent;
+                //loaderCamp.sourceComponent = plannerComponent;
                 client.sendAuthorization(login.text, password.text)
             }
         }

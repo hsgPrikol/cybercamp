@@ -35,7 +35,7 @@ Rectangle {
 
         imgAvatar.source="qrc:/Questroom/3.tif"//client.getMyAvatar()
         tbName.text="Игорь Юрьевич"//client.getMyName();
-        tbLogin.text="Игорёк"//client.getMyLogin();
+        tbLogin.text=client.getLogin();
     }
 
 

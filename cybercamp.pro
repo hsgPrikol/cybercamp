@@ -10,6 +10,8 @@ SOURCES += \
         ../protocol/Client/clientgeneral.cpp \
         ../protocol/Server/servergeneral.cpp \
         ../protocol/Server/sql/child.cpp \
+        ../protocol/Server/sql/transaction.cpp \
+        ../protocol/Server/sql/doctor.cpp \
         ../protocol/Server/sql/locationlog.cpp \
         ../protocol/Server/sql/scheduleelement.cpp \
         ../protocol/Server/sql/servercontroller.cpp \
