@@ -248,13 +248,18 @@ Rectangle {
 
     }
 
-
-
     Rectangle{
         id: header
         width: parent.width
         height: 60
         color: colorBlue
+        radius: 10
+
+        Rectangle{
+                    width: parent.width
+                    height: 40
+                    color: colorBlue
+                }
 
         //        z:1
         Rectangle {
@@ -264,6 +269,7 @@ Rectangle {
             width: app_width
             height: 60
             color: colorBlue
+            radius: 10
             Rectangle {
                 id: rectangle1
                 x: 0
@@ -337,6 +343,16 @@ Rectangle {
             }
         }
     }
+
+    DropShadow {
+            anchors.fill: header
+            horizontalOffset: 3
+            verticalOffset: 3
+            radius: 8.0
+            samples: 17
+            color: "#80000000"
+            source: header
+        }
 }
 
 /*##^##

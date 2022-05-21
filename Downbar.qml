@@ -17,7 +17,7 @@ Rectangle {
     property real customOpacity: 0.7
     property int fontSize: 12
     property var filesSelected:[]
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
 
     //    property var currentDialogDownBar: -1
 

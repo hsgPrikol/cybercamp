@@ -1,11 +1,12 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
+import QtGraphicalEffects 1.0
 
 Rectangle{
     width: app_width
     height: app_height
     color: "black"
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
 
 
     Rectangle{
@@ -77,6 +78,13 @@ Rectangle{
             width: app_width
             height: 60
             color: colorBlue
+            radius: 10
+
+            Rectangle{
+                        width: parent.width
+                        height: 40
+                        color: colorBlue
+                    }
 
             Rectangle {
                 id: rectangle1
@@ -119,6 +127,16 @@ Rectangle{
                 verticalAlignment: Text.AlignVCenter
             }
         }
+
+        DropShadow {
+                anchors.fill: rectangle
+                horizontalOffset: 3
+                verticalOffset: 3
+                radius: 8.0
+                samples: 17
+                color: "#80000000"
+                source: rectangle
+            }
     }
 }
 

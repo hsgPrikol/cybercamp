@@ -2,12 +2,13 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import QtGraphicalEffects 1.0
 
 Rectangle {
     id: listDialog
 
 
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
 
     property int dfltWidth: 506
     property int dfltHeight: 900
@@ -158,6 +159,13 @@ Rectangle {
             width: 506
             height: 60
             color: colorBlue
+            radius: 10
+
+            Rectangle{
+                        width: parent.width
+                        height: 40
+                        color: colorBlue
+                    }
 
             Rectangle {
                 id: rectangle1
@@ -228,6 +236,16 @@ Rectangle {
                     fillMode: Image.PreserveAspectFit
                 }
             }
+        }
+
+        DropShadow {
+            anchors.fill: rectangle
+            horizontalOffset: 3
+            verticalOffset: 3
+            radius: 8.0
+            samples: 17
+            color: "#80000000"
+            source: rectangle
         }
 
         property int sizeDialogs: 10

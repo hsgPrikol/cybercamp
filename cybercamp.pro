@@ -6,6 +6,8 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+include(QZXing/QZXing.pri)
+
 SOURCES += \
         ../protocol/Client/clientgeneral.cpp \
         ../protocol/Server/servergeneral.cpp \
@@ -17,6 +19,7 @@ SOURCES += \
         ../protocol/Server/sql/servercontroller.cpp \
         ../protocol/commondata.cpp \
         ../protocol/protocolcommunication.cpp \
+        cameraasist.cpp \
         geoclass.cpp \
         geopoint.cpp \
         main.cpp \
@@ -45,6 +48,7 @@ HEADERS += \
     ../protocol/Server/sql/servercontroller.h \
     ../protocol/commondata.h \
     ../protocol/protocolcommunication.h \
+    cameraasist.h \
     geoclass.h \
     geopoint.h \
     tmp.h

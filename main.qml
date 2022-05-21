@@ -13,7 +13,7 @@ ApplicationWindow {
     property int tmpWidth: 506
     property int tmpHeight: 900
 
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
 
 //    width: Screen.width
 //    height: Screen.height
@@ -24,7 +24,13 @@ ApplicationWindow {
     Loader{
         id: loaderCamp
 
-        sourceComponent: autorizationComponent
+        sourceComponent: cameraQRCodeComponent
+    }
+
+    Component{
+        id: achivmentsProfileComponent
+        AchivmentsProfile{
+        }
     }
 
     Component{

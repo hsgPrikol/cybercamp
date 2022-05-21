@@ -49,7 +49,7 @@ Rectangle{
     property color noColor: "#00000000"
     property int sizeHelpHeight: 40
     property int dfltWidthElementMenu: 337
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
     property var textHelpArray: ["Выход", "Поддержка", "О разработчике"]
     property var colorHelpArray: ["#464f56", "#ffffff"]
     property int sizeFont: 20

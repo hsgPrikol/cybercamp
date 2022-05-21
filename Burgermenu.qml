@@ -20,7 +20,7 @@ Rectangle {
     property color noColor: "#00000000"
     property real customOpacity: 0.7
     property color biruzoviu: "#068d9d"
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#e6177bd9"
     property int fontSize: 20
 
     function closeNavDrawer()
@@ -74,6 +74,8 @@ Rectangle {
         height: parent.height
         color: colorBlue
 
+//        opacity: 0.9
+
 
         Rectangle {
             id: rectangle
@@ -102,6 +104,8 @@ Rectangle {
                         id: imgAvatar
                         x: 8
                         y: 8
+                        width: 65
+                        height: 55
                         anchors.fill: parent
                         fillMode: Image.PreserveAspectCrop
                         source: client.getMyAvatar()
@@ -114,21 +118,31 @@ Rectangle {
                         layer.effect: OpacityMask {
                             maskSource: parent
                         }
+
+                        MouseArea
+                        {
+                            anchors.fill: parent
+
+                            onClicked: {
+                                burgermenu.closeNavDrawer()
+                                loaderCamp.sourceComponent = achivmentsProfileComponent
+                            }
+                        }
                     }
                 }
 
-                MouseArea {
-                    id: mouseArea
-                    x: 0
-                    y: 0
-                    width: 263
-                    height: 60
+//                MouseArea {
+//                    id: mouseArea
+//                    x: 0
+//                    y: 0
+//                    width: 263
+//                    height: 60
 
-                    onClicked: {
-                        loader.sourceComponent = profileAchivmentComponent
-                        burgermenu.closeNavDrawer()
-                    }
-                }
+//                    onClicked: {
+//                        loader.sourceComponent = profileAchivmentComponent
+//                        burgermenu.closeNavDrawer()
+//                    }
+//                }
             }
 
             Rectangle {
@@ -145,7 +159,8 @@ Rectangle {
                     width: 26
                     height: 25
 
-                    source: "qrc:/picture/settings.png"
+                    source: "qrc:/Burger/settings.tif"
+                    mipmap: true
                     //                fillMode: Image.PreserveAspectFit
                 }
 
@@ -153,7 +168,7 @@ Rectangle {
                     anchors.fill: parent
 
                     onClicked: {
-                        loader.sourceComponent = settingsComponent
+                        loaderCamp.sourceComponent = settingsComponent
                         burgermenu.closeNavDrawer()
                     }
                 }
@@ -170,10 +185,11 @@ Rectangle {
                 Text {
                     id: tbName
                     anchors.leftMargin: 10
+                    anchors.topMargin: 5
                     anchors.fill: parent
+                    font.pixelSize: 24
                     color: "#ffffff"
                     text: client.getMyName()
-                    font.pixelSize: fontSize
                     verticalAlignment: Text.AlignVCenter
                     Component.onCompleted: {
                         text: client.getMyName()
@@ -227,7 +243,7 @@ Rectangle {
                 id: repMenu
                 anchors.fill: parent
 
-                model: 9
+                model: 10
 
                 property int sizeHeightMenuElement: 60
                 Menuelement {
@@ -248,7 +264,7 @@ Rectangle {
         Rectangle {
             id: lineCuka2
             x: 35
-            y: 693
+            y: 743
             width: 267
             height: 1
             color: "#ffffff"
@@ -256,14 +272,17 @@ Rectangle {
 
         Column {
             id: helpColumn
-            anchors.top: lineCuka2.bottom
+            anchors.topMargin: 20
             anchors.bottom: parent.bottom
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
             anchors.right: parent.right
             anchors.left: parent.left
 
             spacing: 10
             width: parent.width
-            height: repHelp.model * (helpColumn.spacing + repHelp.height)
+            height: 150
 
             Repeater{
                 id: repHelp
@@ -278,6 +297,13 @@ Rectangle {
             }
         }
     }
+
+//    GaussianBlur {
+//            anchors.fill: burgerMenu
+//            source: burgerMenu
+//            radius: 8
+//            samples: 16
+//        }
 
     Rectangle {
         id: rectangle7
@@ -305,3 +331,9 @@ Rectangle {
 
 
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:1.33}
+}
+##^##*/

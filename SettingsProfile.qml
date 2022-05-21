@@ -13,7 +13,7 @@ Rectangle{
     property color noColor: "#00000000"
     property real customOpacity: 0.7
     property color biruzoviu: "#3fae51"
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#e6177bd9"
 
     property int countIndexVessage: 0
 
@@ -59,6 +59,13 @@ Rectangle{
         width: parent.width
         height: 60
         color: colorBlue
+        radius: 10
+
+        Rectangle{
+                    width: parent.width
+                    height: 40
+                    color: colorBlue
+                }
 
         Rectangle {
             id: rectangle
@@ -108,75 +115,99 @@ Rectangle{
         }
     }
 
-    Rectangle {
-        id: pictureMask
-        x: 0
-        y: 60
-        width: app_width
-        height: 220
-        color: "#ffffff"
-
+    Rectangle{
+        anchors.top: toolBar.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        color: "black"
         Image {
-            id: avatar
-            x: 0
-            y: 0
-            width: app_width
-            height: 220
-            source: client.getMyAvatar()//  lientData.getPathAvatar(index) != ""?"file:///" +currentDir+"/" + clientData.getPathAvatar(index):"qrc:/resourses/avatar/lobkov.tif"
-//            source: "qrc:/resourses/avatar/lobkov.tif"
-            fillMode: Image.PreserveAspectFit
-        }
-
-        Rectangle {
-            id: nameMask
-            x: 0
-            y: 180
-            width: app_width
-            height: 40
-            color: colorBlue
-            opacity: customOpacity
-        }
-
-        Text {
-            id: tbName
-            x: 0
-            y: 180
-            width: 415
-            height: 40
-            color: "#ffffff"
-            text: currentUser.getName()
-            font.pixelSize: 16
-            verticalAlignment: Text.AlignVCenter
-            minimumPixelSize: 16
-            leftPadding: 15
-        }
-
-        Rectangle {
-            id: chooseAvatarButtonMask
-            x: 414
-            y: 160
-            width: 76
-            height: 60
-            color: "#00000000"
-
-            Image {
-                id: chooseAvatarImage
-                anchors.fill: parent
-                source: "qrc:/resourses/nastroiki/kopka_obovit`_photo.tif"
-                anchors.leftMargin: 0
-                anchors.topMargin: 0
-                fillMode: Image.PreserveAspectFit
-            }
-
-            MouseArea{
-                anchors.fill: parent
-
-                onClicked: {
-                    fileOpenDialog.open()
-                }
-            }
+            id: mainPhone
+            opacity: 0.8
+            anchors.fill: parent
+            source: "qrc:/pictureRegistration/anime_anime_girls_Touhou_Kochiya_Sanae-71537.jpg"
         }
     }
+
+    DropShadow {
+            anchors.fill: toolBar
+            horizontalOffset: 3
+            verticalOffset: 3
+            radius: 8.0
+            samples: 17
+            color: "#80000000"
+            source: toolBar
+        }
+
+//    Rectangle {
+//        id: pictureMask
+//        x: 0
+//        y: 60
+//        width: app_width
+//        height: 220
+//        color: "#ffffff"
+
+//        Image {
+//            id: avatar
+//            x: 0
+//            y: 0
+//            width: app_width
+//            height: 220
+//            source: client.getMyAvatar()//  lientData.getPathAvatar(index) != ""?"file:///" +currentDir+"/" + clientData.getPathAvatar(index):"qrc:/resourses/avatar/lobkov.tif"
+////            source: "qrc:/resourses/avatar/lobkov.tif"
+//            fillMode: Image.PreserveAspectFit
+//        }
+
+//        Rectangle {
+//            id: nameMask
+//            x: 0
+//            y: 180
+//            width: app_width
+//            height: 40
+//            color: colorBlue
+//            opacity: customOpacity
+//        }
+
+//        Text {
+//            id: tbName
+//            x: 0
+//            y: 180
+//            width: 415
+//            height: 40
+//            color: "#ffffff"
+//            text: currentUser.getName()
+//            font.pixelSize: 16
+//            verticalAlignment: Text.AlignVCenter
+//            minimumPixelSize: 16
+//            leftPadding: 15
+//        }
+
+//        Rectangle {
+//            id: chooseAvatarButtonMask
+//            x: 414
+//            y: 160
+//            width: 76
+//            height: 60
+//            color: "#00000000"
+
+//            Image {
+//                id: chooseAvatarImage
+//                anchors.fill: parent
+//                source: "qrc:/resourses/nastroiki/kopka_obovit`_photo.tif"
+//                anchors.leftMargin: 0
+//                anchors.topMargin: 0
+//                fillMode: Image.PreserveAspectFit
+//            }
+
+//            MouseArea{
+//                anchors.fill: parent
+
+//                onClicked: {
+//                    fileOpenDialog.open()
+//                }
+//            }
+//        }
+//    }
 
     Rectangle {
         id: scrollViewMask
@@ -184,7 +215,7 @@ Rectangle{
         y: 60
         width: parent.width
         height: 840
-        color: Qt.darker(colorBlue)
+        color: colorBlue
 
         ScrollView{
             property int contentHeightSettings: 1040

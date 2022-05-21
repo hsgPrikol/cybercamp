@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtGraphicalEffects 1.0
 
 Rectangle{
     id: root
@@ -8,7 +9,7 @@ Rectangle{
     property int tmpWidth: 506
     property int tmpHeight: 900
 
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
 
     property var tmpGeoMark
 
@@ -24,6 +25,13 @@ Rectangle{
         width: parent.width
         height: 60
         color: colorBlue
+        radius: 10
+
+        Rectangle{
+                    width: parent.width
+                    height: 40
+                    color: colorBlue
+                }
 
         //        z:1
         Rectangle {
@@ -33,6 +41,7 @@ Rectangle{
             width: app_width
             height: 60
             color: colorBlue
+            radius: 10
             Rectangle {
                 id: rectangle1
                 x: 0
@@ -106,6 +115,16 @@ Rectangle{
             }
         }
     }
+
+    DropShadow {
+            anchors.fill: header
+            horizontalOffset: 3
+            verticalOffset: 3
+            radius: 8.0
+            samples: 17
+            color: "#80000000"
+            source: header
+        }
 
     Rectangle {
         id: leaderboards

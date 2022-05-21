@@ -15,7 +15,7 @@ Rectangle {
 
     property int heightToolBar: 60
     property int countIndexVessage: 0
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
     property int fontSize: 14
 
     property var newMassege
@@ -202,6 +202,13 @@ Rectangle {
             width: parent.width
             height: heightToolBar
             color: colorBlue
+            radius: 10
+
+            Rectangle{
+                        width: parent.width
+                        height: 40
+                        color: colorBlue
+                    }
 
             Rectangle {
                 id: rectangle
@@ -428,6 +435,16 @@ Rectangle {
 
                 }
             }
+
+            DropShadow {
+                    anchors.fill: rectangle2
+                    horizontalOffset: 3
+                    verticalOffset: 3
+                    radius: 8.0
+                    samples: 17
+                    color: "#80000000"
+                    source: rectangle2
+                }
 
             Downbar {
                 id: downBar

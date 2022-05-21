@@ -12,7 +12,7 @@ Rectangle {
     property color noColor: "#00000000"
     property real customOpacity: 0.7
     property color biruzoviu: "#3fae51"
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#00000000"
 
     property int countIndexVessage: 0
     width: 506
@@ -57,7 +57,7 @@ Rectangle {
             height: 40
             color: "#ffffff"
             text: client.getMyName()
-            font.pixelSize: 16
+            font.pixelSize: 20
             verticalAlignment: Text.AlignVCenter
             minimumPixelSize: 16
             leftPadding: 15
@@ -107,7 +107,7 @@ Rectangle {
             height: 50
             color: "#ffffff"
             text: "Аккаунт"
-            font.pixelSize: 18
+            font.pixelSize: 24
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -154,7 +154,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: qsTr("Логин")
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -171,7 +171,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: qsTr("Пароль")
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -188,7 +188,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: qsTr("Телефон")
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -205,7 +205,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: qsTr("Дата рождения")
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -222,7 +222,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: qsTr("Язык")
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -244,7 +244,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: client.getMyLogin()
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -262,7 +262,7 @@ Rectangle {
                     anchors.fill: parent
                     text: qsTr("Сменить")
                     font.underline: true
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
 
@@ -287,7 +287,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: qsTr("**********")
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -304,7 +304,7 @@ Rectangle {
                     color: "#ffffff"
                     anchors.fill: parent
                     text: client.getMyBirthDate()
-                    font.pixelSize: 15
+                    font.pixelSize: 20
                     verticalAlignment: Text.AlignVCenter
                     leftPadding: 10
                 }
@@ -332,22 +332,23 @@ Rectangle {
             id: comboBox
             x: 253
             y: 210
-            width: 192
+            width: 240
             height: 48
 
-            model: ["Русский", "English"]
+            model: ["   Русский", "   English"]
 
             background: Rectangle{
                 anchors.fill: parent
-
+                border.color: "white"
                 color: "#00000000"
+                radius: 10
             }
 
             contentItem: Text {
                 text: comboBox.displayText
                 color: "#ffffff"
                 verticalAlignment: Text.AlignVCenter
-                font.pixelSize: 14
+                font.pixelSize: 20
             }
 
         }
@@ -367,7 +368,7 @@ Rectangle {
             height: 50
             color: "#ffffff"
             text: "Уведомления"
-            font.pixelSize: 18
+            font.pixelSize: 24
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -376,15 +377,15 @@ Rectangle {
 
             x: 8
             y: 24
-            width: 177
+            width: 159
             height: 2
             color: "#ffffff"
         }
 
         Rectangle {
-            x: 322
+            x: 340
             y: 24
-            width: 177
+            width: 195
             height: 2
             color: "#ffffff"
         }
@@ -416,7 +417,7 @@ Rectangle {
                         height: 50
                         color: "#ffffff"
                         text: qsTr("Уведомления")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -436,7 +437,7 @@ Rectangle {
                         height: 50
                         color: "#ffffff"
                         text: qsTr("Отображать\nсодержимое\nсообщения")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -459,19 +460,20 @@ Rectangle {
                         id: notificationBox
                         x: 0
                         y: 0
-                        width: 253
+                        width: 240
                         height: 50
-                        model: ["Включены", "Выключены"]
+                        model: ["   Включены", "   Выключены"]
                         background: Rectangle{
                             anchors.fill: parent
-
+                            border.color: "white"
                             color: "#00000000"
+                            radius: 10
                         }
                         contentItem: Text {
                             text: notificationBox.displayText
                             color: "#ffffff"
                             verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: 14
+                            font.pixelSize: 20
                         }
 
                     }
@@ -486,21 +488,24 @@ Rectangle {
                         id: messageDataVisionBox
                         x: 0
                         y: 0
-                        width: 253
+                        width: 240
                         height: 50
+                        clip: true
 
-                        model: ["Только при разблоировке", "Выключены"]
+                        model: ["   Только при разблоировке", "   Выключены"]
                         background: Rectangle{
                             anchors.fill: parent
-
+                            border.color: "white"
                             color: "#00000000"
+                            radius: 10
                         }
 
                         contentItem: Text{
                             text: messageDataVisionBox.displayText
                             color: "#ffffff"
                             verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: 14
+                            font.pixelSize: 20
+                            elide: Text.ElideRight
                         }
 
                     }
@@ -525,7 +530,7 @@ Rectangle {
             height: 50
             color: "#ffffff"
             text: "Память"
-            font.pixelSize: 18
+            font.pixelSize: 24
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -569,7 +574,7 @@ Rectangle {
                         height: 50
                         color: "#ffffff"
                         text: qsTr("Место сохранения файлов")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -587,7 +592,7 @@ Rectangle {
                         height: 50
                         color: "#ffffff"
                         text: qsTr("Автоматическая загрузка\nмедиаконтента")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -602,7 +607,7 @@ Rectangle {
                         anchors.fill: parent
                         color: "#ffffff"
                         text: qsTr("Автоматическ очищать\nмедиаконтент")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -625,22 +630,23 @@ Rectangle {
                         id: filePathSaveBox
                         x: 0
                         y: 0
-                        width: 253
+                        width: 240
                         height: 50
 
-                        model: ["Внутреняя память", "Внешняя память"]
+                        model: ["   Внутреняя память", "   Внешняя память"]
 
                         background: Rectangle{
                             anchors.fill: parent
-
+                            border.color: "white"
                             color: "#00000000"
+                            radius: 10
                         }
 
                         contentItem: Text{
                             text: filePathSaveBox.displayText
                             color: "#ffffff"
                             verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: 14
+                            font.pixelSize: 20
                         }
                     }
                 }
@@ -654,21 +660,22 @@ Rectangle {
                         id: autoDownloadContentBox
                         x: 0
                         y: 0
-                        width: 253
+                        width: 240
                         height: 50
                         background: Rectangle{
                             anchors.fill: parent
-
+                            border.color: "white"
                             color: "#00000000"
+                            radius: 10
                         }
 
-                        model: ["Включено", "Выключено"]
+                        model: ["   Включено", "   Выключено"]
 
                         contentItem: Text{
                             text: autoDownloadContentBox.displayText
                             color: "#ffffff"
                             verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: 14
+                            font.pixelSize: 20
                         }
                     }
                 }
@@ -682,22 +689,23 @@ Rectangle {
                         id: autoClearContentBox
                         x: 0
                         y: 0
-                        width: 253
+                        width: 240
                         height: 50
 
-                        model: ["Спустя неделю", "Спустя 3 месяца", "Спустя полгода"]
+                        model: ["   Спустя неделю", "   Спустя 3 месяца", "   Спустя полгода"]
 
                         background: Rectangle{
                             anchors.fill: parent
-
+                            border.color: "white"
                             color: "#00000000"
+                            radius: 10
                         }
 
                         contentItem: Text{
                             text: autoClearContentBox.displayText
                             color: "#ffffff"
                             verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: 14
+                            font.pixelSize: 20
                         }
                     }
                 }
@@ -721,7 +729,7 @@ Rectangle {
             height: 50
             color: "#ffffff"
             text: "Тема"
-            font.pixelSize: 18
+            font.pixelSize: 24
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -762,7 +770,7 @@ Rectangle {
                         anchors.fill: parent
                         color: "#ffffff"
                         text: qsTr("Фон диалогов")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -777,7 +785,7 @@ Rectangle {
                         anchors.fill: parent
                         color: "#ffffff"
                         text: qsTr("Палитра")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -803,7 +811,7 @@ Rectangle {
                         height: 50
                         color: "#ffffff"
                         text: qsTr("Выбрать")
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }
@@ -828,7 +836,7 @@ Rectangle {
                         anchors.fill: parent
                         color: "#ffffff"
                         elide: Text.ElideNone
-                        font.pixelSize: 15
+                        font.pixelSize: 20
                         verticalAlignment: Text.AlignVCenter
                         leftPadding: 10
                     }

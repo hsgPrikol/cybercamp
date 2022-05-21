@@ -14,7 +14,7 @@ Rectangle {
     property color biruzoviu: "#3FAe51"
 
     property int sizeHeightRectName: 84
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"
     property int fontSize: 14
     property var tmpContactsChar
     property string chat_title: "Друзьяшки"
@@ -120,6 +120,13 @@ Rectangle {
             width: app_width
             height: 60
             color: colorBlue
+            radius: 10
+
+            Rectangle{
+                        width: parent.width
+                        height: 40
+                        color: colorBlue
+                    }
 
             Rectangle {
                 id: rectangle1
@@ -216,6 +223,16 @@ Rectangle {
                 }
             }
         }
+
+        DropShadow {
+                anchors.fill: rectangle
+                horizontalOffset: 3
+                verticalOffset: 3
+                radius: 8.0
+                samples: 17
+                color: "#80000000"
+                source: rectangle
+            }
 
         Rectangle {
             id: rectangle4

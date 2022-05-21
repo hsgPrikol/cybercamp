@@ -12,7 +12,8 @@ Rectangle {
     width: tmpWidth
     height: tmpHeight
 
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#177bd9"//"#158BCD"
+
 
     property real customOpacity: 0.7
     property int fontSize: 18

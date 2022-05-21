@@ -144,5 +144,29 @@
         <file>LilBook.qml</file>
         <file>Knijka_malyshka/prikol1.png</file>
         <file>AddCoin.qml</file>
+        <file>Achivments.qml</file>
+        <file>AchivmentsProfile.qml</file>
+        <file>CircleProgressBar.qml</file>
+        <file>ach/d1.png</file>
+        <file>ach/d10.png</file>
+        <file>ach/d11.png</file>
+        <file>ach/d12.png</file>
+        <file>ach/d2.png</file>
+        <file>ach/d3.png</file>
+        <file>ach/d4.png</file>
+        <file>ach/d5.png</file>
+        <file>ach/d6.png</file>
+        <file>ach/d7.png</file>
+        <file>ach/d8.png</file>
+        <file>ach/d9.png</file>
+        <file>ach/makePhoto.png</file>
+        <file>ach/qrIcon.png</file>
+        <file>ach/t1.png</file>
+        <file>ach/t2.png</file>
+        <file>ach/t3.png</file>
+        <file>ach/t4.png</file>
+        <file>ach/t5.png</file>
+        <file>ach/t6.png</file>
+        <file>ach/t7.png</file>
     </qresource>
 </RCC>

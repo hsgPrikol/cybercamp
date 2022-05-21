@@ -7,7 +7,7 @@ Rectangle {
     id: root1
 
 
-    property var colorBlue: "#158BCD"
+    property var colorBlue: "#e6177bd9"
 
     property int dfltWidth: 506
     property int dfltHeight: 900

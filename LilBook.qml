@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtGraphicalEffects 1.0
 
 Rectangle {
     width: 506
@@ -11,6 +12,13 @@ Rectangle {
         width: 506
         height: 60
         color: colorBlue
+        radius: 10
+
+        Rectangle{
+                    width: parent.width
+                    height: 40
+                    color: colorBlue
+                }
 
         Rectangle {
             id: rectangle1
@@ -82,6 +90,17 @@ Rectangle {
             }
         }
     }
+
+    DropShadow {
+            anchors.fill: rectangle
+            horizontalOffset: 3
+            verticalOffset: 3
+            radius: 8.0
+            samples: 17
+            color: "#80000000"
+            source: rectangle
+        }
+
     Image{
         y:60
         x: -5

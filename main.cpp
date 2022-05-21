@@ -5,6 +5,7 @@
 #include <QQmlContext>
 #include <tmp.h>
 #include "../protocol/Client/clientgeneral.h"
+#include "cameraasist.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +21,9 @@ int main(int argc, char *argv[])
 
     ClientGeneral* client=new ClientGeneral();
     engine.rootContext()->setContextProperty("client", client);
+
+    CameraAsist* cameraAsist = new CameraAsist();
+    engine.rootContext()->setContextProperty("cameraAsist", cameraAsist);
 
     Tmp tmp;
     tmp.getKeyLeaderBoards();
