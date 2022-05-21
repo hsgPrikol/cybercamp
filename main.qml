@@ -99,6 +99,14 @@ ApplicationWindow {
         }
     }
 
+    Component{
+        id: cybershopComponent
+
+        Cybershop{
+
+        }
+    }
+
     Burgermenu{
         id: burgermenu
         x: -tmpWidth

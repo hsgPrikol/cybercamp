@@ -55,12 +55,14 @@ Rectangle{
 
     function mapCapms()
     {
-        burgermenu.closeNavDrawer()
-       console.log("mapCapms")
+        loaderCamp.sourceComponent = mapComponent;
+        burgermenu.closeNavDrawer();
+        console.log("mapCapms");
     }
 
     function cyberShop()
     {
+        loaderCamp.sourceComponent = cybershopComponent;
         burgermenu.closeNavDrawer();
         console.log("cyberShop")
     }

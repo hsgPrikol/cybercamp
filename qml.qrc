@@ -135,5 +135,10 @@
         <file>Images/sleep.png</file>
         <file>Images/toilet.png</file>
         <file>CameraQRCode.qml</file>
+        <file>Cybershop.qml</file>
+        <file>Resourse_v2/1 lot.tif</file>
+        <file>Resourse_v2/2 lot.tif</file>
+        <file>Resourse_v2/3 lot.tif</file>
+        <file>Resourse_v2/4 lot.tif</file>
     </qresource>
 </RCC>
