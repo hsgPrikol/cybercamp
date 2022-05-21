@@ -189,15 +189,16 @@ void ServerGeneral::handlerAuthorization(QJsonObject *object, DataClientOnline *
     QString login = ((*object)[ProtocolCommunication::___LOGIN]).toString();
     QString password = ((*object)[ProtocolCommunication::___PASSWORD]).toString();
 
-    int result = 0;//controllerDB->confirmAuthorization(login, password);
+    QPair<int, int> result = controllerDB->authorization(login, password);
 
     QJsonObject* answer = new QJsonObject({
                                                 {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_AUTHORIZATION)}
                                          });
 
-    if(result == 0)
+    if(result.first == 1)
     {
         answer->insert(ProtocolCommunication::___STATUS, QJsonValue(ProtocolCommunication::___STS_DONE));
+        answer->insert(ProtocolCommunication::___ROLE, QJsonValue(QString::number(result.second)));
         client->login = login;
         client->isAuthorized = true;
     }
@@ -215,17 +216,18 @@ void ServerGeneral::handlerRegistration(QJsonObject *object, DataClientOnline *c
     QString password = ((*object)[ProtocolCommunication::___PASSWORD]).toString();
     QString email = ((*object)[ProtocolCommunication::___E_MAIL]).toString();
 
-    int result = 0;//controllerDB->registrationUser(*farmerNew);
+    int result = 1;
 
     QJsonObject* answer = new QJsonObject({
                                                 {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_REGISTRATION)}
                                          });
 
-    if(result == 0)
+    if(result == 1)
     {
         answer->insert(ProtocolCommunication::___STATUS, QJsonValue(ProtocolCommunication::___STS_DONE));
         client->login = login;
         client->isAuthorized = true;
+//        answer->insert(ProtocolCommunication::___ROLE, QJsonValue(QString::number(result.second)));
     }
     else
     {
@@ -239,6 +241,8 @@ void ServerGeneral::handlerCurrentGeolocation(QJsonObject *object, DataClientOnl
 {
     QString latitude = ((*object)[ProtocolCommunication::___LATITUDE]).toString();
     QString longitude = ((*object)[ProtocolCommunication::___LONGITUDE]).toString();
+
+    controllerDB->addLocationLog(client->login, latitude.toDouble(), longitude.toDouble());
 }
 
 void ServerGeneral::sendGetGeolocation(DataClientOnline *client)
@@ -252,10 +256,36 @@ void ServerGeneral::sendGetGeolocation(DataClientOnline *client)
 
 void ServerGeneral::handlerGetInfoUserParent(QJsonObject *object, DataClientOnline *client)
 {
-    // TODO дописать информацию полученную из БД
+    Child child = controllerDB->getChildInfo(((*object)[ProtocolCommunication::___LOGIN]).toString());
+
     QJsonObject* jObj = new QJsonObject({
-                                                {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_INFO_USER_PARENT)}
-                                         });
+                                            {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_INFO_USER_KID)},
+                                            {ProtocolCommunication::___NAME, QJsonValue(child.name)},
+                                            {ProtocolCommunication::___IMAGE, QJsonValue(ProtocolCommunication::ByteArrayToString(child.avatar))},
+                                            {ProtocolCommunication::___DESCRIPTION, QJsonValue(child.info)},
+                                            {ProtocolCommunication::___HOUSE, QJsonValue(child.house)},
+                                            {ProtocolCommunication::___ROOM, QJsonValue(child.room)},
+                                            {ProtocolCommunication::___PARTY_NAME, QJsonValue(child.party_name)},
+                                            {ProtocolCommunication::___OWNER_NAME, QJsonValue(child.owner_name)},
+                                            {ProtocolCommunication::___CASH, QJsonValue(child.cash)},
+                                            {ProtocolCommunication::___FROM_DATE_TIME, QJsonValue(child.from.toString())},
+                                            {ProtocolCommunication::___TO_DATE_TIME, QJsonValue(child.to.toString())},
+                                            {ProtocolCommunication::___DATE_TIME, QJsonValue(child.birthdate.toString())},
+                                            {ProtocolCommunication::___DIET, QJsonValue(child.add_info.diet)},
+                                            {ProtocolCommunication::___EXCURSION, QJsonValue(child.add_info.excursion)},
+                                            {ProtocolCommunication::___MOVE_MODE, QJsonValue(child.add_info.move_mode)},
+                                            {ProtocolCommunication::___MIN_WATER, QJsonValue(child.add_info.min_water)},
+                                            {ProtocolCommunication::___YFZ, QJsonValue(child.add_info.yfz)},
+                                            {ProtocolCommunication::___SPORT_GAMES, QJsonValue(child.add_info.sport_games)},
+                                            {ProtocolCommunication::___CLIMAT, QJsonValue(child.add_info.climat)},
+                                            {ProtocolCommunication::___MAIN_DIAGNOZ, QJsonValue(child.add_info.main_diagnoz)},
+                                            {ProtocolCommunication::___SECOND_DIAGNOZ, QJsonValue(child.add_info.second_diagnoz)},
+                                            {ProtocolCommunication::___ORGANIZATION, QJsonValue(child.add_info.organization)},
+                                            {ProtocolCommunication::___DOCTOR_NAME, QJsonValue(child.add_info.doctor.name)},
+                                            {ProtocolCommunication::___HEALT_GROUP, QJsonValue(child.add_info.healt_group)},
+                                            {ProtocolCommunication::___LOGIN, QJsonValue(((*object)[ProtocolCommunication::___LOGIN]).toString())},
+
+                                        });
 
     ProtocolCommunication::SendTextMessage(ProtocolCommunication::jsonObjectToString(jObj), client->socket);
 }
@@ -276,6 +306,7 @@ void ServerGeneral::handlerGetInfoUserKid(QJsonObject *object, DataClientOnline 
                                             {ProtocolCommunication::___CASH, QJsonValue(child.cash)},
                                             {ProtocolCommunication::___FROM_DATE_TIME, QJsonValue(child.from.toString())},
                                             {ProtocolCommunication::___TO_DATE_TIME, QJsonValue(child.to.toString())},
+                                            {ProtocolCommunication::___DATE_TIME, QJsonValue(child.birthdate.toString())}
                                         });
 
     ProtocolCommunication::SendTextMessage(ProtocolCommunication::jsonObjectToString(jObj), client->socket);
@@ -283,10 +314,33 @@ void ServerGeneral::handlerGetInfoUserKid(QJsonObject *object, DataClientOnline 
 
 void ServerGeneral::handlerGetScheduleOnTodayForParent(QJsonObject *object, DataClientOnline *client)
 {
-    // TODO дописать информацию полученную из БД
+    Child child = controllerDB->getChildInfo(client->login);
+
     QJsonObject* jObj = new QJsonObject({
-                                                {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_SCHEDULE_ON_TODAY_FOR_PARENT)}
-                                            });
+                                            {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_INFO_USER_KID)},
+                                            {ProtocolCommunication::___NAME, QJsonValue(child.name)},
+                                            {ProtocolCommunication::___IMAGE, QJsonValue(ProtocolCommunication::ByteArrayToString(child.avatar))},
+                                            {ProtocolCommunication::___DESCRIPTION, QJsonValue(child.info)},
+                                            {ProtocolCommunication::___HOUSE, QJsonValue(child.house)},
+                                            {ProtocolCommunication::___ROOM, QJsonValue(child.room)},
+                                            {ProtocolCommunication::___PARTY_NAME, QJsonValue(child.party_name)},
+                                            {ProtocolCommunication::___OWNER_NAME, QJsonValue(child.owner_name)},
+                                            {ProtocolCommunication::___CASH, QJsonValue(child.cash)},
+                                            {ProtocolCommunication::___FROM_DATE_TIME, QJsonValue(child.from.toString())},
+                                            {ProtocolCommunication::___TO_DATE_TIME, QJsonValue(child.to.toString())},
+                                            {ProtocolCommunication::___DIET, QJsonValue(child.add_info.diet)},
+                                            {ProtocolCommunication::___EXCURSION, QJsonValue(child.add_info.excursion)},
+                                            {ProtocolCommunication::___MOVE_MODE, QJsonValue(child.add_info.move_mode)},
+                                            {ProtocolCommunication::___MIN_WATER, QJsonValue(child.add_info.min_water)},
+                                            {ProtocolCommunication::___YFZ, QJsonValue(child.add_info.yfz)},
+                                            {ProtocolCommunication::___SPORT_GAMES, QJsonValue(child.add_info.sport_games)},
+                                            {ProtocolCommunication::___CLIMAT, QJsonValue(child.add_info.climat)},
+                                            {ProtocolCommunication::___MAIN_DIAGNOZ, QJsonValue(child.add_info.main_diagnoz)},
+                                            {ProtocolCommunication::___SECOND_DIAGNOZ, QJsonValue(child.add_info.second_diagnoz)},
+                                            {ProtocolCommunication::___ORGANIZATION, QJsonValue(child.add_info.organization)},
+                                            {ProtocolCommunication::___DOCTOR_NAME, QJsonValue(child.add_info.doctor.name)},
+                                            {ProtocolCommunication::___HEALT_GROUP, QJsonValue(child.add_info.healt_group)}
+                                        });
 
     ProtocolCommunication::SendTextMessage(ProtocolCommunication::jsonObjectToString(jObj), client->socket);
 }
@@ -309,7 +363,6 @@ void ServerGeneral::handlerGetScheduleOnTodayForKid(QJsonObject *object, DataCli
                                                 {ProtocolCommunication::___LONGITUDE, QJsonValue(QString::number(vectorSchedule[i].longitude))},
                                                 {ProtocolCommunication::___EVENT_STATUS, QJsonValue(QString::number(vectorSchedule[i].status))},
                                                 {ProtocolCommunication::___EVENT_TYPE, QJsonValue(QString::number(vectorSchedule[i].event_type_id))}
-
                                             });
 
         jArr.push_back(*jObj);
@@ -328,32 +381,53 @@ void ServerGeneral::handlerKidShopping(QJsonObject *object, DataClientOnline *cl
 {
     QString value = ((*object)[ProtocolCommunication::___VALUE]).toString();
     QString description = ((*object)[ProtocolCommunication::___DESCRIPTION]).toString();
+    QString latitude = ((*object)[ProtocolCommunication::___LATITUDE]).toString();
+    QString longitude = ((*object)[ProtocolCommunication::___LONGITUDE]).toString();
 
-    // TODO дописать вызов функции для снятия денежных средств
+    controllerDB->updateCash(client->login, value.toInt(), latitude.toDouble(), longitude.toDouble(), description);
 }
 
 void ServerGeneral::handlerParentMakeDeposit(QJsonObject *object, DataClientOnline *client)
 {
     QString value = ((*object)[ProtocolCommunication::___VALUE]).toString();
 
-    // TODO дописать вызов функции для внесения денежных средств
+    controllerDB->updateCash(client->login, value.toInt());
 }
 
 void ServerGeneral::handlerGetHistoryCash(QJsonObject *object, DataClientOnline *client)
 {
-    // TODO дописать информацию полученную из БД
-    QJsonObject* jObj = new QJsonObject({
+    QVector<Transaction> vectorTransition = controllerDB->getTransactions(((*object)[ProtocolCommunication::___LOGIN]).toString());
+
+    QJsonArray jArr;
+    QJsonObject jObj;
+
+    for(int i = 0; i < vectorTransition.size(); i++)
+    {
+        QJsonObject* jObj = new QJsonObject({
+                                                {ProtocolCommunication::___VALUE, QJsonValue(vectorTransition[i].value)},
+                                                {ProtocolCommunication::___DESCRIPTION, QJsonValue(vectorTransition[i].description)},
+                                                {ProtocolCommunication::___DATE_TIME, QJsonValue(vectorTransition[i].datetime.toString())}
+                                            });
+
+        jArr.push_back(*jObj);
+    }
+
+    QJsonObject* answer = new QJsonObject({
                                                 {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_HISTORY_CASH)}
                                             });
 
-    ProtocolCommunication::SendTextMessage(ProtocolCommunication::jsonObjectToString(jObj), client->socket);
+    answer->insert(ProtocolCommunication::___TRANSITION_LOG_LIST, jArr);
+
+    ProtocolCommunication::SendTextMessage(ProtocolCommunication::jsonObjectToString(answer), client->socket);
 }
 
 void ServerGeneral::handlerGetGeolocationLogToday(QJsonObject *object, DataClientOnline *client)
 {
-    QDateTime today(QDate::currentDate());
+    QString login = ((*object)[ProtocolCommunication::___LOGIN]).toString();
 
-    QVector<LocationLog> vectorLocationLog = controllerDB->getLocationLog(client->login, today, today.addDays(1));
+    QDateTime today(QDate::currentDate(), QTime());
+
+    QVector<LocationLog> vectorLocationLog = controllerDB->getLocationLog(login, today, today.addDays(1));
 
     QJsonArray jArr;
     QJsonObject jObj;
@@ -369,7 +443,6 @@ void ServerGeneral::handlerGetGeolocationLogToday(QJsonObject *object, DataClien
         jArr.push_back(*jObj);
     }
 
-    // TODO дописать информацию полученную из БД
     QJsonObject* answer = new QJsonObject({
                                                 {ProtocolCommunication::___COMMAND, QJsonValue(ProtocolCommunication::___CMD_GEOLOCATION_LOG_TODAY)}
                                             });

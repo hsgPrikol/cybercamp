@@ -13,7 +13,9 @@
 #include "locationlog.h"
 #include "child.h"
 #include "scheduleelement.h"
+#include "transaction.h"
 #include <QDebug>
+#include <QPair>
 
 class ServerController
 {
@@ -34,6 +36,14 @@ public:
     Child getChildInfo(QString login);
 
     void prikol(QString login);
+
+    /// <status, role>
+    QPair<int, int> authorization(QString login, QString pass);
+    Child getFullChildInfo(QString login);
+    QVector<ScheduleElement> getSchedule(QString login, QDateTime from, QDateTime to);
+    void updateCash(QString login, int value, double latitude, double longitude, QString description);
+    void updateCash(QString login, int value);
+    QVector<Transaction> getTransactions(QString login);
 };
 
 #endif // SERVERCONTROLLER_H

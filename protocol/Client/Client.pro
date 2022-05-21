@@ -9,14 +9,10 @@ CONFIG -= app_bundle
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-#        ../../SuperServer/achivement.cpp \
-#        ../../SuperServer/farmer.cpp \
-#        ../../SuperServer/farmerplant.cpp \
-#        ../../SuperServer/farmertask.cpp \
-#        ../../SuperServer/instruments.cpp \
-#        ../../SuperServer/logplant.cpp \
-#        ../../SuperServer/mediaplant.cpp \
-#        ../../SuperServer/plant.cpp \
+        ../Server/sql/child.cpp \
+        ../Server/sql/locationlog.cpp \
+        ../Server/sql/scheduleelement.cpp \
+        ../Server/sql/transaction.cpp \
         ../commondata.cpp \
         ../protocolcommunication.cpp \
         clientgeneral.cpp \
@@ -28,14 +24,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    ../../SuperServer/achivement.h \
-    ../../SuperServer/farmer.h \
-    ../../SuperServer/farmerplant.h \
-    ../../SuperServer/farmertask.h \
-    ../../SuperServer/instruments.h \
-    ../../SuperServer/logplant.h \
-    ../../SuperServer/mediaplant.h \
-    ../../SuperServer/plant.h \
+    ../Server/sql/child.cpp \
+    ../Server/sql/locationlog.cpp \
+    ../Server/sql/scheduleelement.cpp \
+    ../Server/sql/transaction.h \
     ../commondata.h \
     ../protocolcommunication.h \
     clientgeneral.h

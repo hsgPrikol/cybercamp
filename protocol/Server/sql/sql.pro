@@ -9,10 +9,12 @@ CONFIG -= app_bundle
 
 SOURCES += \
         child.cpp \
+        doctor.cpp \
         locationlog.cpp \
         main.cpp \
         scheduleelement.cpp \
-        servercontroller.cpp
+        servercontroller.cpp \
+        transaction.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -21,6 +23,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     child.h \
+    doctor.h \
     locationlog.h \
     scheduleelement.h \
-    servercontroller.h
+    servercontroller.h \
+    transaction.h

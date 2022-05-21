@@ -10,6 +10,10 @@
 #include <qmath.h>
 
 #include "../protocolcommunication.h"
+#include "../Server/sql/child.h"
+#include "../Server/sql/locationlog.h"
+#include "../Server/sql/scheduleelement.h"
+#include "../Server/sql/transaction.h"
 
 class ClientGeneral : public QObject
 {
@@ -22,7 +26,16 @@ private:
 
     QWebSocket socketServer;
 
+    Child person;
+
+    Child child;
+    QVector<ScheduleElement> vectorScheduleElement;
+    QVector<QString> vectorChild;
+    QVector<Transaction> vectorTransition;
+    QVector<LocationLog> vectorLocationLog;
+
     bool isAuthorization = false;
+    int role = -1;
     QString myLogin;
 
     void onConnected();
@@ -76,7 +89,7 @@ public slots:
     void sendGetUserInfoKid();
 
     /// Отправка запроса на получении информации о родителе
-    void sendGetUserInfoParent();
+    void sendGetUserInfoParent(QString login);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,12 +110,12 @@ public slots:
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     /// Отправка запроса на получение истории счета ребенка
-    void sendGetHistoryCash();
+    void sendGetHistoryCash(QString login);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     /// Отправка запроса на получение лога геолокации на сегодня
-    void sendGetGetGeolocationLogToday();
+    void sendGetGetGeolocationLogToday(QString login);
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 signals:

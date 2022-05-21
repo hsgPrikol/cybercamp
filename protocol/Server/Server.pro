@@ -12,6 +12,8 @@ SOURCES += \
         sql/locationlog.cpp \
         sql/child.cpp \
         sql/scheduleelement.cpp \
+        sql/doctor.cpp \
+        sql/transaction.cpp \
         sql/servercontroller.cpp \
         ../commondata.cpp \
         ../protocolcommunication.cpp \
@@ -27,6 +29,8 @@ HEADERS += \
     sql/locationlog.h \
     sql/child.h \
     sql/scheduleelement.h \
+    sql/doctor.h \
+    sql/transaction.h \
     sql/servercontroller.h \
     ../commondata.h \
     ../protocolcommunication.h \

@@ -65,12 +65,27 @@ public:
     const static QString ___TO_DATE_TIME;
     const static QString ___SCHEDULE_LIST;
     const static QString ___LOCATION_LOG_LIST;
+    const static QString ___TRANSITION_LOG_LIST;
     const static QString ___INFO;
     const static QString ___EVENT_STATUS;
     const static QString ___EVENT_TYPE;
     const static QString ___DATE_TIME;
     const static QString ___DESCRIPTION;
     const static QString ___VALUE;
+    const static QString ___ROLE;
+
+    const static QString ___DIET;
+    const static QString ___EXCURSION;
+    const static QString ___MOVE_MODE;
+    const static QString ___MIN_WATER;
+    const static QString ___YFZ;
+    const static QString ___SPORT_GAMES;
+    const static QString ___CLIMAT;
+    const static QString ___MAIN_DIAGNOZ;
+    const static QString ___SECOND_DIAGNOZ;
+    const static QString ___ORGANIZATION;
+    const static QString ___HEALT_GROUP;
+    const static QString ___DOCTOR_NAME;
 
     //~~~~~status start~~~~~
     const static QString ___STS_DONE;

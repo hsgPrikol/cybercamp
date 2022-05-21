@@ -49,12 +49,26 @@ const QString ProtocolCommunication::___FROM_DATE_TIME = QString("from_date_time
 const QString ProtocolCommunication::___TO_DATE_TIME = QString("to_date_time");
 const QString ProtocolCommunication::___SCHEDULE_LIST = QString("schedule_list");
 const QString ProtocolCommunication::___LOCATION_LOG_LIST = QString("location_log_list");
+const QString ProtocolCommunication::___TRANSITION_LOG_LIST = QString("transition_log_list");
 const QString ProtocolCommunication::___INFO = QString("info");
 const QString ProtocolCommunication::___EVENT_STATUS = QString("event_status");
 const QString ProtocolCommunication::___EVENT_TYPE = QString("event_type");
 const QString ProtocolCommunication::___DATE_TIME = QString("date_time");
 const QString ProtocolCommunication::___DESCRIPTION = QString("description");
 const QString ProtocolCommunication::___VALUE = QString("value");
+const QString ProtocolCommunication::___ROLE = QString("role");
+const QString ProtocolCommunication::___DIET = QString("diet");
+const QString ProtocolCommunication::___EXCURSION = QString("excursion");
+const QString ProtocolCommunication::___MOVE_MODE = QString("move_mode");
+const QString ProtocolCommunication::___MIN_WATER = QString("min_water");
+const QString ProtocolCommunication::___YFZ = QString("yfz");
+const QString ProtocolCommunication::___SPORT_GAMES = QString("sport_games");
+const QString ProtocolCommunication::___CLIMAT = QString("climat");
+const QString ProtocolCommunication::___MAIN_DIAGNOZ = QString("main_diagnoz");
+const QString ProtocolCommunication::___SECOND_DIAGNOZ = QString("second_diagnoz");
+const QString ProtocolCommunication::___ORGANIZATION = QString("organization");
+const QString ProtocolCommunication::___DOCTOR_NAME = QString("doctor_name");
+const QString ProtocolCommunication::___HEALT_GROUP = QString("healt_group");
 
 QString ProtocolCommunication::ByteArrayToString(QByteArray array)
 {
