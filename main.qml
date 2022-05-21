@@ -24,7 +24,7 @@ ApplicationWindow {
     Loader{
         id: loaderCamp
 
-        sourceComponent: addCoinComponent
+        sourceComponent: autorizationComponent
     }
 
     Component{

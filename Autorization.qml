@@ -250,13 +250,13 @@ Rectangle {
             onClicked: {
 
                 loaderCamp.sourceComponent = plannerComponent;
-                //                client.sendAuthorization(login.text, password.text)
+                client.sendAuthorization(login.text, password.text)
             }
         }
     }
 
     Component.onCompleted: {
-        //        client.onAnswerAuthorization.connect(onAutorization);
+                client.onAnswerAuthorization.connect(onAutorization);
     }
 }
 

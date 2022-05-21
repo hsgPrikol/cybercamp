@@ -139,14 +139,10 @@
         <file>Resourse_v2/2 lot.tif</file>
         <file>Resourse_v2/3 lot.tif</file>
         <file>Resourse_v2/4 lot.tif</file>
-<<<<<<< HEAD
         <file>Leaderboards.qml</file>
         <file>Images/map.png</file>
-        <file>LayerNews.qml</file>
-=======
         <file>LilBook.qml</file>
         <file>Knijka_malyshka/prikol1.png</file>
         <file>AddCoin.qml</file>
->>>>>>> refs/remotes/f/branchVolodya
     </qresource>
 </RCC>

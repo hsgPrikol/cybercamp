@@ -4,6 +4,7 @@
 #include "geoclass.h"
 #include <QQmlContext>
 #include <tmp.h>
+#include "../protocol/Client/clientgeneral.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +17,9 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
+
+    ClientGeneral* client=new ClientGeneral();
+    engine.rootContext()->setContextProperty("client", client);
 
     Tmp tmp;
     tmp.getKeyLeaderBoards();
