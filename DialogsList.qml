@@ -21,6 +21,12 @@ Rectangle {
 
     property var tmpNewDialog
 
+    property var testDialogs:[
+    ["Общий чат","Отряд орлёнок", "Лариса Владимировна", "Новостной чат"],
+    ["Выбираем кино для просмотра", "В море глубоко не заплываем!!!", "Хорошо покушал? а то родители беспокоятся", "Вечером просмотр кинофильма"],
+    ["12:37","10:42","Вчера","20.05"]
+    ]
+
     color: noColor
 
     property int countRep: 6
@@ -256,9 +262,17 @@ Rectangle {
                 }
 
                 Repeater {
-                     model: 10
+                     model: 4
 
                      Dialogs{
+                         avatarClients: "qrc:/Questroom/" + (Math.floor(Math.random() * 7)+1) +".tif"
+                         timeMessage: testDialogs[2][index]
+                         nameFamilia: testDialogs[0][index]
+                         isOnline: index==2
+                         isGroup: index!=2
+                         isChecked: index!=0
+                         lastMessageUser: testDialogs[1][index]
+                         countUnChecked: 1
 
                      }
                 }

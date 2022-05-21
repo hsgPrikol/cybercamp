@@ -7,6 +7,9 @@ Item {
 
     property var day_value: 25
     property string button_text_: "Полить"
+    property string textTime: "00:00"
+    property string textHeader: "Header"
+    property string textPosition: "Postition"
 
 
     Rectangle{
@@ -36,7 +39,7 @@ Item {
             font.pixelSize: 20
             verticalAlignment: Text.AlignVCenter
             color: "#7F7F7F"
-            text: "6:00"
+            text: textTime
             //                anchors.verticalCenter: row.verticalCenter
             //anchors.left: row.left
             //anchors.leftMargin: 10
@@ -54,12 +57,13 @@ Item {
 
         Text {
             id: taskUsername
-            x: 165
+            x: 100
             y: 0
-            text: qsTr("Валера")
+            text: textHeader
             font.pixelSize: 23
             height: background.height
             verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignLeft
             font.family: "Calibri"
             anchors.verticalCenter: row.verticalCenter
         }
@@ -78,7 +82,7 @@ Item {
             id: plant_name
             x: 340
             y: 0
-            text: qsTr("Мандарин")
+            text: textPosition
             font.pixelSize: 16
             horizontalAlignment: Text.AlignLeft
             color: "#7F7F7F"

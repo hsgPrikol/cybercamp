@@ -56,8 +56,13 @@ Rectangle{
     function mapCapms()
     {
         loaderCamp.sourceComponent = mapComponent;
+<<<<<<< HEAD
         burgermenu.closeNavDrawer();
         console.log("mapCapms");
+=======
+        burgermenu.closeNavDrawer()
+       console.log("mapCapms")
+>>>>>>> 131b3a47ef71a8bbd050fd363b7dff9a599869ec
     }
 
     function cyberShop()

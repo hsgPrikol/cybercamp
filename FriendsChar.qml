@@ -8,7 +8,7 @@ Rectangle {
     id: root
 
     property int dfltWidth: app_width
-    property int dfltHeight: 100
+    property int dfltHeight: 84
     property color noColor: "#00000000"
     property real customOpacity: 0.7
     property color biruzoviu: "#3fae51"
@@ -24,7 +24,7 @@ Rectangle {
     property var testList: []
 
     width: dfltWidth
-    height: dfltHeight * testList.length
+    height: dfltHeight * testList.length+20
 //        border.width: 1
 //       border.color: "white"
 
