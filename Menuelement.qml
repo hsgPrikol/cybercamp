@@ -34,7 +34,7 @@ Rectangle{
 
     function quests()
     {
-//        loader.sourceComponent = contactsList
+        loaderCamp.sourceComponent = settingsComponent
         burgermenu.closeNavDrawer()
         console.log("quests")
     }
@@ -62,19 +62,25 @@ Rectangle{
     function cyberShop()
     {
         burgermenu.closeNavDrawer();
-
+        console.log("cyberShop")
     }
 
-    property var functionMenuElementArray: [shedule, messandger, newsFeed, quests, babyBook, whyuuuuchka, mapCapms, cyberShop]
+    function friends()
+    {
+        burgermenu.closeNavDrawer();
+        console.log("friends")
+    }
+
+    property var functionMenuElementArray: [shedule, messandger,friends, newsFeed, quests, babyBook, whyuuuuchka, mapCapms, cyberShop]
 
     property int fontSize: 20
     property int sizeHeightMenuElement: 60
     property int dfltWidthElementMenu: 337
     property color noColor: "#00000000"
 
-    property var textArray: ["Расписание", "Мессенджер", "Лента новостей", "Квеструм", "Книжка-малышка", "Почемучка", "Карта лагеря", "Cyber-магазин"]
+    property var textArray: ["Расписание", "Мессенджер", "Друзья", "Лента новостей", "Квеструм", "Книжка-малышка", "Почемучка", "Карта лагеря", "Cyber-магазин"]
 
-    property var pictureArray: ["qrc:/picture/Mygryadki.png", "qrc:/picture/Glossariy.png", "qrc:/picture/everydaying.png", "qrc:/picture/lenta.png", "qrc:/picture/Cyber-Shop.png", "qrc:/picture/phorum.png"]
+    property var pictureArray: ["qrc:/Burger/Raspisanie.tif", "qrc:/Burger/Messenger.tif", "qrc:/Burger/Friends.tif", "qrc:/Burger/Lenta.tif", "qrc:/Burger/Questroom.tif", "qrc:/Burger/Knijka_malyshka.tif", "qrc:/Burger/Pochemuchka.tif","qrc:/Burger/Maps.tif","qrc:/Burger/Cyber_magazine.tif"]
 
 
     width: dfltWidthElementMenu

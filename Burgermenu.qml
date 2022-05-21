@@ -223,16 +223,14 @@ Rectangle {
             height: 4 * (columnMenu.spacing * repMenu.height)
             spacing: 5
 
-
             Repeater{
                 id: repMenu
                 anchors.fill: parent
 
-                model: 8
+                model: 9
 
                 property int sizeHeightMenuElement: 60
                 Menuelement {
-
 
                 }
             }

@@ -6,7 +6,6 @@ ApplicationWindow {
     visible: true
     title: qsTr("CyberCamp")
 
-
     property int app_width: width
     property int app_height: height
 
@@ -24,7 +23,15 @@ ApplicationWindow {
     Loader{
         id: loaderCamp
 
-        sourceComponent: mapComponent
+        sourceComponent: autorizationComponent
+    }
+
+    Component{
+        id: settingsComponent
+
+        SettingsProfile{
+
+        }
     }
 
     Component{

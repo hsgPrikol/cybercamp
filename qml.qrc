@@ -28,5 +28,19 @@
         <file>Dialogs.qml</file>
         <file>DialogsList.qml</file>
         <file>Map.qml</file>
+        <file>Settings.qml</file>
+        <file>SettingsProfile.qml</file>
+        <file>Burger/avatar.tif</file>
+        <file>Burger/Cyber_magazine.tif</file>
+        <file>Burger/Friends.tif</file>
+        <file>Burger/Knijka_malyshka.tif</file>
+        <file>Burger/Lenta.tif</file>
+        <file>Burger/line_.tif</file>
+        <file>Burger/Maps.tif</file>
+        <file>Burger/Messenger.tif</file>
+        <file>Burger/Pochemuchka.tif</file>
+        <file>Burger/Questroom.tif</file>
+        <file>Burger/Raspisanie.tif</file>
+        <file>Burger/settings.tif</file>
     </qresource>
 </RCC>
