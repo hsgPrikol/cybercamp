@@ -140,5 +140,8 @@
         <file>Resourse_v2/2 lot.tif</file>
         <file>Resourse_v2/3 lot.tif</file>
         <file>Resourse_v2/4 lot.tif</file>
+        <file>LilBook.qml</file>
+        <file>Knijka_malyshka/prikol1.png</file>
+        <file>AddCoin.qml</file>
     </qresource>
 </RCC>
