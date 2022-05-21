@@ -3,6 +3,7 @@
 #include "geopoint.h"
 #include "geoclass.h"
 #include <QQmlContext>
+#include <tmp.h>
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,9 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
+
+    Tmp tmp;
+    tmp.getKeyLeaderBoards();
 
         GeoPoint* gp=new GeoPoint();
     engine.rootContext()->setContextProperty("gp", gp);
