@@ -28,7 +28,6 @@
         <file>Dialogs.qml</file>
         <file>DialogsList.qml</file>
         <file>Map.qml</file>
-<<<<<<< HEAD
         <file>Settings.qml</file>
         <file>SettingsProfile.qml</file>
         <file>Burger/avatar.tif</file>
@@ -129,13 +128,12 @@
         <file>Questroom/lider.tif</file>
         <file>Questroom/lider_info.tif</file>
         <file>Questroom/vyhod.tif</file>
-=======
         <file>Images/map.jpg</file>
         <file>Images/geomark.png</file>
         <file>GeoMark.qml</file>
         <file>Images/coffe.png</file>
         <file>Images/sleep.png</file>
         <file>Images/toilet.png</file>
->>>>>>> d75d5dd6457cb3e1693cba487e5834b19af041b5
+        <file>CameraQRCode.qml</file>
     </qresource>
 </RCC>

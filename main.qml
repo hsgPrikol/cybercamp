@@ -23,7 +23,15 @@ ApplicationWindow {
     Loader{
         id: loaderCamp
 
-        sourceComponent: autorizationComponent
+        sourceComponent: cameraQRCodeComponent
+    }
+
+    Component{
+        id: cameraQRCodeComponent
+
+        CameraQRCode{
+
+        }
     }
 
     Component{

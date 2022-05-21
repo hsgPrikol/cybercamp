@@ -1,4 +1,4 @@
-QT += quick positioning
+QT += quick positioning multimedia
 
 CONFIG += c++11
 
