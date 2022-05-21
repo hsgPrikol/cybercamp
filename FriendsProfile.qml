@@ -45,7 +45,7 @@ Rectangle {
                 id: image1
                 anchors.fill: parent
                 fillMode: Image.PreserveAspectCrop
-                source: pathAvatar
+                source: "qrc:/Questroom/" + (Math.floor(Math.random() * 7)+1) +".tif"
                 layer.enabled: true
                 layer.effect: OpacityMask {
                     maskSource: parent

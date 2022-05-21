@@ -17,7 +17,7 @@ Rectangle {
     width:  tmpWidth
     height: tmpHeight
 
-    property var month_list: ["Апрель","Май","Июнь"]
+    property var month_list: ["20.05.22","21.05.22","22.05.22"]
 
     Rectangle {
         width: parent.width
@@ -142,6 +142,7 @@ Rectangle {
                 Plannermonth {
                     id: month
                     textR: month_list[index]
+                    currentIndex: index
                 }
             }
         }

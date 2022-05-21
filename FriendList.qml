@@ -17,19 +17,31 @@ Rectangle {
     property var colorBlue: "#158BCD"
     property int fontSize: 14
     property var tmpContactsChar
-    property string chat_title: "Друзья"
+    property string chat_title: "Друзьяшки"
 
     property int counter: 0
     property var logins: []
 
-    property var testChar: ["a", "g", "w"]
+    property var testChar: ["а", "к", "п", "т"]
 
-    property var testW: ["wew", "wq"]
+    property var testA: [
+        "Алексеев Алексей",
+        "Александров Александр",
+        "Аа123 Маск",
+        "Алоэ Вера",
+        "Абв Гдежз",
 
-    property var testA: ["aofof"]
-    property var testG: ["gad", "gbd"]
 
-    property var testAG: [testA, testG, testW]
+        ]
+
+    property var testK: ["Куприянов Кирилл",]
+    property var testP: ["Павлов Максимилиан",
+        "Привет Андрей",
+        "Порш Кайенов",]
+    property var testT: ["Тетя Аня",
+        "Татьяна Михайловна"]
+
+    property var testAG: [testA, testK, testP, testT]
 
 
     //    ConfidenceWidget{

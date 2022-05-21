@@ -128,12 +128,13 @@
         <file>Questroom/lider.tif</file>
         <file>Questroom/lider_info.tif</file>
         <file>Questroom/vyhod.tif</file>
-        <file>Images/map.jpg</file>
         <file>Images/geomark.png</file>
         <file>GeoMark.qml</file>
         <file>Images/coffe.png</file>
         <file>Images/sleep.png</file>
         <file>Images/toilet.png</file>
         <file>CameraQRCode.qml</file>
+        <file>Images/map.png</file>
+        <file>LayerNews.qml</file>
     </qresource>
 </RCC>

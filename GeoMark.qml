@@ -30,7 +30,8 @@ Rectangle {
         id: _textHeader
         text: textHeader
         visible: true
-        y: -20
+        y: 30
+        x:-width/2
     }
 
     MouseArea{

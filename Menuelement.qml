@@ -55,6 +55,7 @@ Rectangle{
 
     function mapCapms()
     {
+        loaderCamp.sourceComponent = mapComponent;
         burgermenu.closeNavDrawer()
        console.log("mapCapms")
     }
