@@ -28,5 +28,11 @@
         <file>Dialogs.qml</file>
         <file>DialogsList.qml</file>
         <file>Map.qml</file>
+        <file>Images/map.jpg</file>
+        <file>Images/geomark.png</file>
+        <file>GeoMark.qml</file>
+        <file>Images/coffe.png</file>
+        <file>Images/sleep.png</file>
+        <file>Images/toilet.png</file>
     </qresource>
 </RCC>
