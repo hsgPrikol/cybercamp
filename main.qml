@@ -3,6 +3,7 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 
 ApplicationWindow {
+    id: main_window
     visible: true
     title: qsTr("CyberCamp")
 
@@ -23,12 +24,25 @@ ApplicationWindow {
     Loader{
         id: loaderCamp
 
-        sourceComponent: cameraQRCodeComponent
+        sourceComponent: addCoinComponent
+    }
+
+    Component{
+        id: lilBookComponent
+        LilBook{
+            anchors.fill: main_window
+        }
+    }
+
+    Component{
+        id: addCoinComponent
+        AddCoin{
+
+        }
     }
 
     Component{
         id: cameraQRCodeComponent
-
         CameraQRCode{
 
         }
