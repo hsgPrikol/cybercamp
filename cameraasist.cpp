@@ -7,12 +7,14 @@ CameraAsist::CameraAsist(QObject *parent) : QObject(parent)
 
 QString CameraAsist::recognizeQR(QString path)
 {
-    QImage imageToDecode(path);
+    QImage imageToDecode("C:\\img.jpg");
     QZXing decoder;
-    decoder.setDecoder( decoder.DecoderFormat_QR_CODE );
+    decoder.setDecoder( QZXing::DecoderFormat_QR_CODE );
 
-    decoder.setSourceFilterType(QZXing::SourceFilter_ImageNormal);
+    decoder.setSourceFilterType(QZXing::SourceFilter_ImageNormal | QZXing::SourceFilter_ImageInverted);
     decoder.setTryHarderBehaviour(QZXing::TryHarderBehaviour_ThoroughScanning | QZXing::TryHarderBehaviour_Rotate);
 
-    return decoder.decodeImage(imageToDecode);
+    QString result =  decoder.decodeImage(imageToDecode);
+
+    return result;
 }

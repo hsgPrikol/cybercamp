@@ -23,6 +23,7 @@ SOURCES += \
         geoclass.cpp \
         geopoint.cpp \
         main.cpp \
+        plantid_api.cpp \
         tmp.cpp
 
 RESOURCES += qml.qrc \
@@ -51,6 +52,7 @@ HEADERS += \
     cameraasist.h \
     geoclass.h \
     geopoint.h \
+    plantid_api.h \
     tmp.h
 
 SUBDIRS += \

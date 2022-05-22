@@ -41,7 +41,7 @@ Rectangle{
 
     function quests()
     {
-        loaderCamp.sourceComponent = settingsComponent
+        loaderCamp.sourceComponent = cameraPlantGoComponent
         burgermenu.closeNavDrawer()
         console.log("quests")
     }

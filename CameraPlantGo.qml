@@ -15,6 +15,7 @@ Rectangle{
     property var tmpGeoMark
 
     property var imgPath
+    property var img
 
     //    width: Screen.width
     //    height: Screen.height
@@ -91,7 +92,7 @@ Rectangle{
                     width: 117
                     height: 60
                     color: "#ffffff"
-                    text: "QR-Code"
+                    text: "Plant-GO"
                     font.pixelSize: 20
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
@@ -165,11 +166,12 @@ Rectangle{
                 onImageCaptured: {
                     imagePreview.source = preview
                     imagePreview.visible = true
+                    img = preview
                 }
 
                 onImageSaved: {
                     imgPath = path
-                    var resultText = cameraAsist.recognizeQR(path);
+                    planAPI.createRequestFromPath(imgPath)
                 }
             }
         }
@@ -219,5 +221,20 @@ Rectangle{
                 camera.imageCapture.capture();
             }
         }
+    }
+
+    function onDataReceived(plant_name, probability, url, value)
+    {
+        value_camera_neuron = value;
+        plant_name_camera_neuron = plant_name
+        url_camera_neuron = url
+        probability_camera_neuron = probability
+        img_camera_neuron = img
+
+        loaderCamp.sourceComponent = resultPlantGoComponent;
+    }
+
+    Component.onCompleted: {
+        planAPI.dataReceived.connect(onDataReceived)
     }
 }

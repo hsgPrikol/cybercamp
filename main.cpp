@@ -6,6 +6,7 @@
 #include <tmp.h>
 #include "../protocol/Client/clientgeneral.h"
 #include "cameraasist.h"
+#include "plantid_api.h"
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +25,9 @@ int main(int argc, char *argv[])
 
     CameraAsist* cameraAsist = new CameraAsist();
     engine.rootContext()->setContextProperty("cameraAsist", cameraAsist);
+
+    PlantID_API* planAPI = new PlantID_API();
+    engine.rootContext()->setContextProperty("planAPI", planAPI);
 
     Tmp tmp;
     tmp.getKeyLeaderBoards();

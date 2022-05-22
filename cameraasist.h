@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QZXing.h>
+#include <QtDebug>
 
 class CameraAsist : public QObject
 {

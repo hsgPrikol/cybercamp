@@ -168,5 +168,7 @@
         <file>ach/t5.png</file>
         <file>ach/t6.png</file>
         <file>ach/t7.png</file>
+        <file>CameraPlantGo.qml</file>
+        <file>ResultPlantGO.qml</file>
     </qresource>
 </RCC>

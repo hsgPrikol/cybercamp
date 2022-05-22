@@ -21,10 +21,28 @@ ApplicationWindow {
     width:  tmpWidth
     height: tmpHeight
 
+    property var img_camera_neuron
+    property var plant_name_camera_neuron
+    property var probability_camera_neuron
+    property var url_camera_neuron
+    property var value_camera_neuron
+
     Loader{
         id: loaderCamp
 
-        sourceComponent: cameraQRCodeComponent
+        sourceComponent: autorizationComponent
+    }
+
+    Component{
+        id: resultPlantGoComponent
+        ResultPlantGO{
+        }
+    }
+
+    Component{
+        id: cameraPlantGoComponent
+        CameraPlantGo{
+        }
     }
 
     Component{
